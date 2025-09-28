@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="logo">ESTRELLA</div>
+
+      <!-- Hamburger (only on mobile) -->
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">portfolio</a></li>
+        <li><a href="bio.html">Bio</a></li>
+        <li><a href="exhibition.html">exhibition</a></li>
+        <li><a href="workshop.html">workshop & reidences</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+  </script>
+
+
+
+
+
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Segoe UI", sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
+
+    /* Banner */
+    .banner {
+      height: 300px;
+      background: url("https://picsum.photos/id/1005/1600/500") no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      padding: 2rem;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    /* Moving Text */
+    .moving-text {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .moving-text h1, .moving-text p {
+      white-space: nowrap;
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+    .moving-text h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      animation-duration: 25s; /* slower */
+    }
+    .moving-text p {
+      font-size: 1rem;
+      animation-duration: 15s; /* faster */
+    }
+    @keyframes marquee {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* Static Text */
+    .static-text {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+      padding-left: 2rem;
+      text-align: left;
+    }
+    .static-text h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .static-text p {
+      font-size: 1rem;
+      max-width: 400px;
+    }
+
+    /* About Section */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      align-items: center;
+    }
+    .about img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .about-text h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .about-text p { margin-bottom: 1rem; color: #555; }
+
+    /* Press Section */
+    .press {
+      background: #fff;
+      padding: 3rem 1rem;
+    }
+    .press h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .press-item {
+      background: #f1f1f1;
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .press-item:hover { transform: translateY(-5px); }
+    .press-item h3 { margin-bottom: 0.5rem; }
+    .press-item a {
+      color: #ff9800;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .press-item a:hover { text-decoration: underline; }
+
+    /* Video Section */
+    .video-section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .video-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .video-section iframe {
+      width: 100%;
+      height: 500px;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .banner {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+      }
+      .static-text {
+        padding-left: 0;
+        margin-top: 1.5rem;
+        text-align: center;
+      }
+      .moving-text h1 { font-size: 1.5rem; }
+      .moving-text p { font-size: 0.9rem; }
+      .video-section iframe { height: 250px; }
+      .about { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="moving-text">
+      <h1>James Muli — Contemporary Visual Artist</h1><br>
+      <p>Exploring identity, resilience, and modern African art through bold storytelling.</p>
+    </div>
+    <div class="static-text">
+      <h2>About The Artist</h2>
+      <p>James Muli blends tradition and modern expression in his exhibitions, creating thought-provoking experiences.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-text">
+      <h2>James Muli</h2>
+      <p>James Muli is a visionary artist whose work bridges contemporary expression and cultural storytelling. 
+         His art explores identity, resilience, and the connection between human experiences and the world around us.</p>
+      <p>Through painting, sculpture, and multimedia projects, James has exhibited globally, captivating audiences 
+         with bold aesthetics and thought-provoking themes.</p>
+    </div>
+    <div>
+      <img src="https://picsum.photos/id/1005/600/400" alt="Artist Portrait">
+    </div>
+  </section>
+
+  <!-- Press Section -->
+  <section class="press">
+    <h2>Press & Features</h2>
+    <div class="press-grid">
+      <div class="press-item">
+        <h3>Art Daily</h3>
+        <p>“Muli redefines the boundary between modern African art and global expression.”</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="press-item">
+        <h3>Creative Times</h3>
+        <p>“A bold visual storyteller of the 21st century.”</p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="press-item">
+        <h3>Culture Magazine</h3>
+        <p>“His collaborative exhibitions bring communities together.”</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <h2>Artist Interview</h2>
+    <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" 
+      title="Artist Video" allowfullscreen></iframe>
+  </section>
+
+</body>
+</html>
