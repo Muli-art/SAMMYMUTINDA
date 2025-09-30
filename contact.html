@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTACT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="logo">SAMMY <i style="color: rgb(82, 44, 248);">M</i></div>
+
+      <!-- Hamburger (only on mobile) -->
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+      <ul>
+        <li><a href="index.html">portfolio</a></li>
+        <li><a href="bio.html">Bio</a></li>
+        <li><a href="exhibition.html">exhibition</a></li>
+        <li><a href="workshop.html">workshop & reidences</a></li>
+        <li><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+  </script>
+
+
+
+
+  
+  <!-- Banner -->
+  <section class="banner">
+    <h1>REACH US</h1>
+    
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <!-- Left Form -->
+    <form>
+      <h2>Send Us a Message</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject"><br><br>
+
+        <label for="body">Message:</label>
+        <textarea id="body" name="body"></textarea><br><br>
+
+        <button type="button" onclick="sendMail()">Email Us</button>
+    </form>
+
+    <!-- Right Contact Info -->
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p><strong>Email:</strong> <a href="mailto:mutindasammy17@gmail.com ">mutindasammy17@gmail.com </a></p>
+      <p><strong>Phone:</strong> <a href="tel:+1234567890">+254 (0) 710 540 657</a></p>
+      <p><strong>Location:</strong> Nairobi, Kenya</p>
+      <p><strong>Follow us:</strong></p>
+      <p>
+        <a href="#">Facebook</a> | 
+        <a href="#">Twitter</a> | 
+        <a href="#">Instagram</a>
+      </p>
+    </div>
+  </section>
+  <script>
+        function sendMail() {
+            const name = document.getElementById('name').value;
+            const subject = document.getElementById('subject').value;
+            const body = document.getElementById('body').value;
+            
+            const emailLink = `mailto:jmmuli681@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("Name: " + name + "\n\n" + body)}`;
+            
+            window.location.href = emailLink;
+        }
+    </script>
+</body>
+</html>
